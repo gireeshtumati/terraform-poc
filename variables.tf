@@ -10,21 +10,20 @@ variable "subnet_availability_zone" {
 
 variable "vpc_cidr" {
   description = "vpc cidr"
-  default     = "172.16.0.0/16"
+  default     = "172.12.0.0/16"
 }
 
 variable "subnet_cidr" {
   description = "subnet cidr"
-  default     = "172.16.10.0/24"
+  default     = "172.12.10.0/24"
 }
 
 variable "vpc_name" {
   description = "VPC Name"
-  default     = "tf-example"
+  default     = "test-gireesh"
 }
 
 variable "subnet_name" {
   description = "Subnet Name tag"
-  default     = "tf-example"
+  default     = "test-gireesh"
 }
-
