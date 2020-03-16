@@ -31,6 +31,19 @@ pipeline {
       }
     }
 
+    stage('Do you want to destroy the Infra?') {
+      steps {
+        script {
+          def userInput = input(id: 'confirm', message: 'Destroy Terraform?', parameters: [ [$class: 'BooleanParameterDefinition', defaultValue: false, description: 'Destroy terraform', name: 'confirm'] ])
+        }
+      }
+    }
+
+    stage('TF Destroy') {
+      steps {
+          sh 'terraform destroy -input=false myplan'
+      }
+    }
   } 
 
 }
